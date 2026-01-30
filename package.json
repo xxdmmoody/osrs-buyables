@@ -1,0 +1,12 @@
+{
+  "name": "osrs-buyables",
+  "version": "1.0.0",
+  "description": "OSRS Buyables application",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\"",
+    "dev": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

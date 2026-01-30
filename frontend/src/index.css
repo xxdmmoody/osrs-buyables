@@ -1,28 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    font-family: 'Lora', 'Georgia', 'Times New Roman', serif;
+    font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --gradient-light: linear-gradient(135deg, #e0dbc9 0%, #ede6d4 100%);
+    --gradient-light-alt: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(139,111,71,0.05) 100%);
+    --gradient-dark: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+    --gradient-dark-alt: linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(168,149,106,0.03) 100%);
   }
 
   body {
     margin: 0;
     min-height: 100vh;
     @apply bg-light-bg text-light-text;
+    background: var(--gradient-light);
+    background-attachment: fixed;
   }
 
   body.dark {
     @apply bg-dark-bg text-dark-text;
+    background: var(--gradient-dark);
+    background-attachment: fixed;
   }
 
   * {
     box-sizing: border-box;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre {
+    font-family: 'IBM Plex Mono', monospace;
+  }
 }
 
 @layer components {
+  /* Elegant table styling */
+  table {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+  }
+
+  /* Custom scrollbar for light mode */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-light-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-border rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-light-accent;
+  }
+
   /* Custom scrollbar for dark mode */
   .dark ::-webkit-scrollbar {
     width: 10px;
@@ -38,6 +82,36 @@
   }
 
   .dark ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-600;
+    @apply bg-dark-accent;
+  }
+
+  /* Glass morphism effect for cards */
+  .glass-light {
+    background: rgba(237, 230, 212, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(184, 168, 136, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(26, 31, 46, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(45, 55, 72, 0.3);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Staggered animation for list items */
+  .stagger-child {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @for $i from 0 to 10 {
+    .stagger-child:nth-child($i + 1) {
+      animation-delay: calc($i * 0.1s);
+    }
   }
 }
+

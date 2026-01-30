@@ -5,7 +5,7 @@ import {
   getSortedRowModel,
   flexRender,
 } from '@tanstack/react-table';
-import { ArrowUp, ArrowDown } from 'lucide-react';
+import { ArrowUp, ArrowDown, TrendingDown, TrendingUp } from 'lucide-react';
 import { formatGP, formatNumber } from '../utils/formatters';
 import { Tooltip } from './Tooltip';
 import { getItemImageUrl } from '../utils/osrsImages';
@@ -24,19 +24,19 @@ export function BuyablesTable({ data, skill }) {
             const [imageError, setImageError] = useState(false);
 
             return (
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-3">
                 {!imageError ? (
                   <img
                     src={getItemImageUrl(itemName)}
                     alt={itemName}
                     loading="lazy"
-                    className="w-6 h-6 object-contain flex-shrink-0"
+                    className="w-7 h-7 object-contain flex-shrink-0 transition-transform group-hover:scale-110"
                     onError={() => setImageError(true)}
                     style={{ imageRendering: 'pixelated' }}
                   />
                 ) : (
-                  <div className="w-7 h-7 bg-light-hover dark:bg-dark-hover rounded flex items-center justify-center flex-shrink-0">
-                    <span className="text-xs text-light-muted dark:text-dark-muted">?</span>
+                  <div className="w-8 h-8 bg-light-accent/10 dark:bg-dark-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xs font-bold text-light-accent dark:text-dark-accent">?</span>
                   </div>
                 )}
                 <div className="font-medium text-light-text dark:text-dark-text">
@@ -48,18 +48,18 @@ export function BuyablesTable({ data, skill }) {
         },
         {
           accessorKey: 'level',
-          header: 'Level',
+          header: 'Lvl',
           cell: (info) => (
-            <div className="text-light-muted dark:text-dark-muted">
+            <div className="font-mono text-sm font-semibold text-light-accent dark:text-dark-accent">
               {info.getValue()}
             </div>
           ),
         },
         {
           accessorKey: 'xpGained',
-          header: 'XP',
+          header: 'XP Gain',
           cell: (info) => (
-            <div className="text-light-muted dark:text-dark-muted">
+            <div className="font-mono text-sm text-light-muted dark:text-dark-muted">
               {formatNumber(info.getValue(), 1)}
             </div>
           ),
@@ -70,10 +70,10 @@ export function BuyablesTable({ data, skill }) {
       if (!isPrayerSkill) {
         baseColumns.push({
           accessorKey: 'sellPrice',
-          header: 'Sell Price',
+          header: 'Sell',
           cell: (info) => (
-            <div className="text-light-text dark:text-dark-text">
-              {formatGP(info.getValue())} GP
+            <div className="font-mono text-sm text-light-text dark:text-dark-text">
+              {formatGP(info.getValue())}
             </div>
           ),
         });
@@ -82,7 +82,7 @@ export function BuyablesTable({ data, skill }) {
       // Material Cost column
       baseColumns.push({
         accessorKey: 'materialCost',
-        header: 'Material Cost',
+        header: 'Cost',
         cell: (info) => {
           const row = info.row.original;
           const materials = row.materials || [];
@@ -112,8 +112,8 @@ export function BuyablesTable({ data, skill }) {
 
           return (
             <Tooltip content={tooltipContent}>
-              <div className="text-light-text dark:text-dark-text cursor-help underline decoration-dotted decoration-light-border dark:decoration-dark-border">
-                {formatGP(info.getValue())} GP
+              <div className="font-mono text-sm text-light-text dark:text-dark-text cursor-help underline decoration-dotted decoration-light-border dark:decoration-dark-border hover:decoration-light-accent dark:hover:decoration-dark-accent transition-colors">
+                {formatGP(info.getValue())}
               </div>
             </Tooltip>
           );
@@ -124,19 +124,24 @@ export function BuyablesTable({ data, skill }) {
       if (!isPrayerSkill) {
         baseColumns.push({
           accessorKey: 'netProfit',
-          header: 'Net Profit',
+          header: 'Profit',
           cell: (info) => {
             const value = info.getValue();
             const isProfit = value > 0;
             return (
               <div
-                className={`font-medium ${
+                className={`font-mono text-sm font-semibold flex items-center gap-1 ${
                   isProfit
                     ? 'text-green-600 dark:text-green-400'
                     : 'text-red-600 dark:text-red-400'
                 }`}
               >
-                {isProfit ? '+' : ''}{formatGP(value)} GP
+                {isProfit ? (
+                  <TrendingUp className="w-3.5 h-3.5" />
+                ) : (
+                  <TrendingDown className="w-3.5 h-3.5" />
+                )}
+                {isProfit ? '+' : ''}{formatGP(value)}
               </div>
             );
           },
@@ -154,10 +159,10 @@ export function BuyablesTable({ data, skill }) {
           const isProfit = !isPrayerSkill && value < 0;
           return (
             <div
-              className={`font-bold ${
+              className={`font-mono font-bold text-sm px-2 py-1 rounded-md ${
                 isProfit
-                  ? 'text-green-600 dark:text-green-400'
-                  : 'text-red-600 dark:text-red-400'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                  : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
               }`}
             >
               {formatNumber(value, 2)}
@@ -187,15 +192,15 @@ export function BuyablesTable({ data, skill }) {
   });
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-light-border dark:border-dark-border">
+    <div className="overflow-x-auto rounded-xl border border-light-border dark:border-dark-border shadow-sm">
       <table className="w-full">
-        <thead className="bg-light-hover dark:bg-dark-surface border-b border-light-border dark:border-dark-border">
+        <thead className="bg-light-accent/5 dark:bg-dark-accent/10 border-b border-light-border dark:border-dark-border">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="px-6 py-3 text-left text-xs font-medium text-light-muted dark:text-dark-muted uppercase tracking-wider cursor-pointer hover:bg-light-bg dark:hover:bg-dark-bg select-none"
+                  className="px-6 py-4 text-left text-xs font-display font-bold text-light-accent dark:text-dark-accent uppercase tracking-widest cursor-pointer hover:bg-light-accent/10 dark:hover:bg-dark-accent/20 select-none transition-colors"
                   onClick={header.column.getToggleSortingHandler()}
                 >
                   <div className="flex items-center gap-2">
@@ -204,7 +209,7 @@ export function BuyablesTable({ data, skill }) {
                       header.getContext()
                     )}
                     {header.column.getIsSorted() && (
-                      <span>
+                      <span className="text-light-accent/60 dark:text-dark-accent/60">
                         {header.column.getIsSorted() === 'desc' ? (
                           <ArrowDown className="w-4 h-4" />
                         ) : (
@@ -218,16 +223,21 @@ export function BuyablesTable({ data, skill }) {
             </tr>
           ))}
         </thead>
-        <tbody className="bg-light-surface dark:bg-dark-bg divide-y divide-light-border dark:divide-dark-border">
-          {table.getRowModel().rows.map((row) => (
+        <tbody className="divide-y divide-light-border dark:divide-dark-border">
+          {table.getRowModel().rows.map((row, idx) => (
             <tr
               key={row.id}
-              className="hover:bg-light-hover dark:hover:bg-dark-hover transition-colors"
+              className="hover:bg-light-accent/5 dark:hover:bg-dark-accent/10 transition-all duration-200 hover:shadow-inner group"
+              style={{
+                animationDelay: `${idx * 0.03}s`,
+                animation: 'fadeIn 0.4s ease-out forwards',
+                opacity: 0,
+              }}
             >
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
-                  className="px-6 py-2 whitespace-nowrap text-sm"
+                  className="px-6 py-3 whitespace-nowrap text-sm transition-colors"
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>

@@ -3,7 +3,7 @@ import { Header } from './Header';
 import { SkillSelector } from './SkillSelector';
 import { BuyablesTable } from './BuyablesTable';
 import { useBuyables } from '../hooks/useBuyables';
-import { Loader2, AlertCircle, RefreshCw } from 'lucide-react';
+import { Loader2, AlertCircle, RefreshCw, Zap, Info } from 'lucide-react';
 
 function App() {
   const [selectedSkill, setSelectedSkill] = useState(() => {
@@ -19,31 +19,34 @@ function App() {
   }, [selectedSkill]);
 
   return (
-    <div className="min-h-screen bg-light-bg dark:bg-dark-bg">
+    <div className="min-h-screen">
       <Header />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Controls Section */}
-        <div className="mb-6 flex items-center justify-between flex-wrap gap-4">
+        <div className="mb-8 flex items-center justify-between flex-wrap gap-6 animate-fade-in">
           <SkillSelector
             selectedSkill={selectedSkill}
             onSkillChange={setSelectedSkill}
           />
 
           {data && (
-            <div className="flex items-center gap-4">
-              <div className="text-sm text-light-muted dark:text-dark-muted">
-                Last updated: {new Date(data.lastUpdated).toLocaleTimeString()}
+            <div className="flex items-center gap-4 px-4 py-3 bg-light-accent/5 dark:bg-dark-accent/10 rounded-lg">
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4 text-light-accent dark:text-dark-accent" />
+                <div className="text-xs font-mono text-light-muted dark:text-dark-muted uppercase tracking-wider">
+                  {new Date(data.lastUpdated).toLocaleTimeString()}
+                </div>
               </div>
               <button
                 onClick={refetch}
                 disabled={loading}
-                className="p-2 rounded-lg transition-colors hover:bg-light-hover dark:hover:bg-dark-hover disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-2 rounded-lg transition-all hover:bg-light-accent/20 dark:hover:bg-dark-accent/20 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
                 aria-label="Refresh data"
                 title="Refresh data"
               >
                 <RefreshCw
-                  className={`w-5 h-5 text-light-muted dark:text-dark-muted ${
+                  className={`w-5 h-5 text-light-accent dark:text-dark-accent ${
                     loading ? 'animate-spin' : ''
                   }`}
                 />
@@ -54,9 +57,11 @@ function App() {
 
         {/* Loading State */}
         {loading && !data && (
-          <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="w-12 h-12 text-blue-500 animate-spin mb-4" />
-            <p className="text-light-muted dark:text-dark-muted">
+          <div className="flex flex-col items-center justify-center py-24 animate-fade-in">
+            <div className="relative w-16 h-16 mb-6">
+              <Loader2 className="w-16 h-16 text-light-accent dark:text-dark-accent animate-spin" />
+            </div>
+            <p className="text-light-muted dark:text-dark-muted font-display font-semibold">
               Loading buyables data...
             </p>
           </div>
@@ -64,17 +69,17 @@ function App() {
 
         {/* Error State */}
         {error && (
-          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6">
-            <div className="flex items-start gap-3">
-              <AlertCircle className="w-6 h-6 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="text-lg font-semibold text-red-900 dark:text-red-200 mb-2">
+          <div className="bg-red-50 dark:bg-red-900/10 border-2 border-red-300 dark:border-red-700/50 rounded-xl p-8 animate-slide-down">
+            <div className="flex items-start gap-4">
+              <AlertCircle className="w-7 h-7 text-red-600 dark:text-red-400 flex-shrink-0 mt-1" />
+              <div className="flex-1">
+                <h3 className="text-lg font-display font-bold text-red-900 dark:text-red-200 mb-2">
                   Error Loading Data
                 </h3>
-                <p className="text-red-700 dark:text-red-300 mb-4">{error}</p>
+                <p className="text-red-700 dark:text-red-300 mb-4 text-sm">{error}</p>
                 <button
                   onClick={refetch}
-                  className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+                  className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all font-semibold text-sm active:scale-95"
                 >
                   Try Again
                 </button>
@@ -86,23 +91,28 @@ function App() {
         {/* Data Table */}
         {!loading && !error && data && data.items && (
           <>
-            <div className="mb-4">
-              <h2 className="text-xl font-semibold text-light-text dark:text-dark-text capitalize">
+            <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <h2 className="text-3xl font-display font-bold text-light-text dark:text-dark-text capitalize mb-2">
                 {data.skill} Buyables
               </h2>
-              <p className="text-sm text-light-muted dark:text-dark-muted mt-1">
-                {data.items.length} items • Sorted by best GP/XP value
+              <p className="text-sm font-mono text-light-muted dark:text-dark-muted">
+                <span className="font-semibold text-light-accent dark:text-dark-accent">{data.items.length}</span> items • Sorted by best GP/XP value
               </p>
             </div>
 
-            <BuyablesTable data={data.items} skill={data.skill} />
+            <div className="animate-fade-in" style={{ animationDelay: '0.15s' }}>
+              <BuyablesTable data={data.items} skill={data.skill} />
+            </div>
 
             {/* Info Section */}
-            <div className="mt-6 p-4 bg-[#f5f1e8] dark:bg-blue-900/20 border border-light-border dark:border-blue-800 rounded-lg">
-              <h3 className="text-sm font-semibold text-light-text dark:text-blue-200 mb-2">
-                Understanding GP/XP
-              </h3>
-              <ul className="text-sm text-light-muted dark:text-blue-300 space-y-1">
+            <div className="mt-8 p-6 bg-light-accent/5 dark:bg-dark-accent/10 border border-light-accent/30 dark:border-dark-accent/30 rounded-xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-start gap-3 mb-4">
+                <Info className="w-5 h-5 text-light-accent dark:text-dark-accent flex-shrink-0 mt-0.5" />
+                <h3 className="text-sm font-display font-bold text-light-accent dark:text-dark-accent uppercase tracking-wider">
+                  Understanding GP/XP
+                </h3>
+              </div>
+              <ul className="text-sm text-light-muted dark:text-dark-muted space-y-2 ml-8">
                 {selectedSkill === 'prayer' ? (
                   <>
                     <li>
@@ -134,8 +144,8 @@ function App() {
                     <li>Lower values = better efficiency (less cost per XP)</li>
                   </>
                 )}
-                <li>
-                  Prices update every 5 minutes from OSRS Wiki real-time data
+                <li className="text-xs pt-1 border-t border-light-accent/20 dark:border-dark-accent/20">
+                  💡 Prices update every 5 minutes from OSRS Wiki real-time data
                 </li>
               </ul>
             </div>
@@ -144,8 +154,8 @@ function App() {
 
         {/* Empty State */}
         {!loading && !error && data && data.items && data.items.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-light-muted dark:text-dark-muted">
+          <div className="text-center py-24 animate-fade-in">
+            <p className="text-light-muted dark:text-dark-muted text-lg font-display font-semibold">
               No buyables data available for this skill.
             </p>
           </div>
