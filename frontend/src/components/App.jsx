@@ -84,21 +84,27 @@ function App() {
         )}
 
         {/* Data Table */}
-        {!loading && !error && data && data.items && (
+        {!error && (data || loading) && (
           <>
             <div className="mb-4">
               <h2 className="text-xl font-semibold text-light-text dark:text-dark-text capitalize">
-                {data.skill} Buyables
+                {selectedSkill} Buyables
               </h2>
-              <p className="text-sm text-light-muted dark:text-dark-muted mt-1">
-                {data.items.length} items • Sorted by best GP/XP value
-              </p>
+              {data && data.items && (
+                <p className="text-sm text-light-muted dark:text-dark-muted mt-1">
+                  {data.items.length} items • Sorted by best GP/XP value
+                </p>
+              )}
             </div>
 
-            <BuyablesTable data={data.items} skill={data.skill} />
+            <div className={`transition-all duration-300 ${loading ? 'opacity-40 blur-sm pointer-events-none' : 'opacity-100 blur-0'}`}>
+              {data && data.items && (
+                <BuyablesTable data={data.items} skill={data.skill} />
+              )}
+            </div>
 
             {/* Info Section */}
-            <div className="mt-6 p-4 bg-[#f5f1e8] dark:bg-blue-900/20 border border-light-border dark:border-blue-800 rounded-lg">
+            <div className={`mt-6 p-4 bg-[#f5f1e8] dark:bg-blue-900/20 border border-light-border dark:border-blue-800 rounded-lg transition-all duration-300 ${loading ? 'opacity-40 blur-sm' : 'opacity-100 blur-0'}`}>
               <h3 className="text-sm font-semibold text-light-text dark:text-blue-200 mb-2">
                 Understanding GP/XP
               </h3>
