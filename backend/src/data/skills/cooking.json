@@ -1,0 +1,96 @@
+{
+  "skill": "cooking",
+  "items": [
+    {
+      "itemId": 385,
+      "name": "Shark",
+      "level": 80,
+      "xpGained": 210,
+      "materials": [
+        { "itemId": 383, "name": "Raw shark", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 397,
+      "name": "Sea turtle",
+      "level": 79,
+      "xpGained": 211.3,
+      "materials": [
+        { "itemId": 395, "name": "Raw sea turtle", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 13441,
+      "name": "Anglerfish",
+      "level": 84,
+      "xpGained": 230,
+      "materials": [
+        { "itemId": 13439, "name": "Raw anglerfish", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 31421,
+      "name": "Moonlight antelope",
+      "level": 91,
+      "xpGained": 250,
+      "materials": [
+        { "itemId": 31422, "name": "Raw moonlight antelope", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 1993,
+      "name": "Jug of wine",
+      "level": 1,
+      "xpGained": 200,
+      "materials": [
+        { "itemId": 1987, "name": "Grapes", "quantity": 1 },
+        { "itemId": 1937, "name": "Jug of water", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 3144,
+      "name": "Cooked karambwan",
+      "level": 30,
+      "xpGained": 190,
+      "materials": [
+        { "itemId": 3142, "name": "Raw karambwan", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 379,
+      "name": "Lobster",
+      "level": 40,
+      "xpGained": 120,
+      "materials": [
+        { "itemId": 377, "name": "Raw lobster", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 373,
+      "name": "Swordfish",
+      "level": 45,
+      "xpGained": 140,
+      "materials": [
+        { "itemId": 371, "name": "Raw swordfish", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 7946,
+      "name": "Monkfish",
+      "level": 62,
+      "xpGained": 150,
+      "materials": [
+        { "itemId": 7944, "name": "Raw monkfish", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 391,
+      "name": "Manta ray",
+      "level": 91,
+      "xpGained": 216.3,
+      "materials": [
+        { "itemId": 389, "name": "Raw manta ray", "quantity": 1 }
+      ]
+    }
+  ]
+}

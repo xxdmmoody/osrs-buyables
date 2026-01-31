@@ -107,11 +107,11 @@ function App() {
                   <>
                     <li>
                       <strong className="text-red-600 dark:text-red-400">
-                        GP/XP
+                        Negative GP/XP
                       </strong>{' '}
                       shows the cost per experience point
                     </li>
-                    <li>Lower values = more efficient training (less cost per XP)</li>
+                    <li>Higher values = more efficient training (less cost per XP)</li>
                     <li>Items are consumed for XP, so there is no profit</li>
                     <li>
                       Chaos altar methods use 0.5x bones due to 50% save chance
@@ -121,17 +121,17 @@ function App() {
                   <>
                     <li>
                       <strong className="text-green-600 dark:text-green-400">
-                        Negative GP/XP
+                        Positive GP/XP
                       </strong>{' '}
                       = You make profit while training!
                     </li>
                     <li>
                       <strong className="text-red-600 dark:text-red-400">
-                        Positive GP/XP
+                        Negative GP/XP
                       </strong>{' '}
                       = It costs GP to train
                     </li>
-                    <li>Lower values = better efficiency (less cost per XP)</li>
+                    <li>Higher values = better efficiency (more profit per XP)</li>
                   </>
                 )}
                 <li>

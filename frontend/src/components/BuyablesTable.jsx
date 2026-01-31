@@ -149,9 +149,9 @@ export function BuyablesTable({ data, skill }) {
         header: 'GP/XP',
         cell: (info) => {
           const value = info.getValue();
-          // For Prayer, positive value = cost (always red)
-          // For other skills, negative = profit (green), positive = cost (red)
-          const isProfit = !isPrayerSkill && value < 0;
+          // For Prayer, negative value = cost (always red)
+          // For other skills, positive = profit (green), negative = cost (red)
+          const isProfit = !isPrayerSkill && value > 0;
           return (
             <div
               className={`font-bold ${
@@ -180,7 +180,7 @@ export function BuyablesTable({ data, skill }) {
       sorting: [
         {
           id: 'pricePerXp',
-          desc: false, // Ascending = best value first
+          desc: true, // Descending = best value (highest profit) first
         },
       ],
     },

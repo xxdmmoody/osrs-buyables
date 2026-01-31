@@ -56,8 +56,8 @@ export async function getBuyablesForSkill(skill) {
     };
   });
 
-  // Sort by price per XP (ascending - best value first)
-  calculatedItems.sort((a, b) => a.pricePerXp - b.pricePerXp);
+  // Sort by price per XP (descending - highest profit first)
+  calculatedItems.sort((a, b) => b.pricePerXp - a.pricePerXp);
 
   return {
     skill: normalizedSkill,
@@ -101,13 +101,13 @@ function calculateItemMetrics(item, prices, skill) {
   const netProfit = sellPrice - materialCost;
 
   // Calculate price per XP
-  // For Prayer: positive value (cost per XP) = materialCost / xpGained
-  // For other skills: negative = you profit while training (-(netProfit / xpGained))
+  // For Prayer: negative value (cost) = -materialCost / xpGained
+  // For other skills: positive = you profit while training (netProfit / xpGained)
   let pricePerXp = 0;
   if (item.xpGained > 0) {
     pricePerXp = isPrayerSkill
-      ? materialCost / item.xpGained  // Prayer: positive cost per XP
-      : -netProfit / item.xpGained;   // Other skills: negative = profit
+      ? -materialCost / item.xpGained  // Prayer: negative cost per XP
+      : netProfit / item.xpGained;     // Other skills: positive = profit
   }
 
   // Determine if this is profitable
