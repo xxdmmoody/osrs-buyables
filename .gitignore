@@ -28,3 +28,7 @@ Thumbs.db
 # Cache
 .cache/
 *.cache
+
+# Deployment
+.vercel
+.railway
