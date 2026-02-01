@@ -1,0 +1,88 @@
+{
+  "skill": "smithing",
+  "items": [
+    {
+      "itemId": 1119,
+      "name": "Steel platebody",
+      "level": 48,
+      "xpGained": 187.5,
+      "materials": [
+        { "itemId": 2353, "name": "Steel bar", "quantity": 5 }
+      ]
+    },
+    {
+      "itemId": 1121,
+      "name": "Mithril platebody",
+      "level": 68,
+      "xpGained": 250,
+      "materials": [
+        { "itemId": 2359, "name": "Mithril bar", "quantity": 5 }
+      ]
+    },
+    {
+      "itemId": 1123,
+      "name": "Adamant platebody",
+      "level": 88,
+      "xpGained": 312.5,
+      "materials": [
+        { "itemId": 2361, "name": "Adamant bar", "quantity": 5 }
+      ]
+    },
+    {
+      "itemId": 1127,
+      "name": "Rune platebody",
+      "level": 99,
+      "xpGained": 375,
+      "materials": [
+        { "itemId": 2363, "name": "Runite bar", "quantity": 5 }
+      ]
+    },
+    {
+      "itemId": 1079,
+      "name": "Rune platelegs",
+      "level": 99,
+      "xpGained": 225,
+      "materials": [
+        { "itemId": 2363, "name": "Runite bar", "quantity": 3 }
+      ]
+    },
+    {
+      "itemId": 1093,
+      "name": "Rune plateskirt",
+      "level": 99,
+      "xpGained": 225,
+      "materials": [
+        { "itemId": 2363, "name": "Runite bar", "quantity": 3 }
+      ]
+    },
+    {
+      "itemId": 1201,
+      "name": "Rune kiteshield",
+      "level": 99,
+      "xpGained": 225,
+      "materials": [
+        { "itemId": 2363, "name": "Runite bar", "quantity": 3 }
+      ]
+    },
+    {
+      "itemId": 2,
+      "name": "Steel cannonball",
+      "level": 35,
+      "xpGained": 25.6,
+      "materials": [
+        { "itemId": 2353, "name": "Steel bar", "quantity": 1 }
+      ],
+      "note": "Produces 4 cannonballs per bar"
+    },
+    {
+      "itemId": 2357,
+      "name": "Gold bar (Goldsmith gauntlets)",
+      "level": 40,
+      "xpGained": 56.2,
+      "materials": [
+        { "itemId": 444, "name": "Gold ore", "quantity": 1 }
+      ],
+      "note": "Requires goldsmith gauntlets"
+    }
+  ]
+}

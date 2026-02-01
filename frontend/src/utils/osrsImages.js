@@ -7,11 +7,13 @@
 export function getItemImageUrl(itemName, size = 36) {
   if (!itemName) return '';
 
-  // Strip training method suffixes for Prayer items
+  // Strip training method suffixes for Prayer and Smithing items
   // "Dragon bones (Gilded altar)" -> "Dragon bones"
+  // "Gold bar (Goldsmith gauntlets)" -> "Gold bar"
   let cleanedName = itemName
     .replace(/ \(Gilded altar\)$/i, '')
-    .replace(/ \(Chaos altar\)$/i, '');
+    .replace(/ \(Chaos altar\)$/i, '')
+    .replace(/ \(Goldsmith gauntlets\)$/i, '');
 
   // Format item name for OSRS Wiki URL
   // Replace spaces with underscores, encode special characters
