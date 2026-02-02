@@ -1,0 +1,94 @@
+{
+  "skill": "crafting",
+  "items": [
+    {
+      "itemId": 1397,
+      "name": "Air battlestaff",
+      "level": 66,
+      "xpGained": 137.5,
+      "materials": [
+        { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
+        { "itemId": 573, "name": "Air orb", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 1395,
+      "name": "Water battlestaff",
+      "level": 54,
+      "xpGained": 100,
+      "materials": [
+        { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
+        { "itemId": 571, "name": "Water orb", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 1399,
+      "name": "Earth battlestaff",
+      "level": 58,
+      "xpGained": 112.5,
+      "materials": [
+        { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
+        { "itemId": 575, "name": "Earth orb", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 1393,
+      "name": "Fire battlestaff",
+      "level": 62,
+      "xpGained": 125,
+      "materials": [
+        { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
+        { "itemId": 569, "name": "Fire orb", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 1135,
+      "name": "Green d'hide body",
+      "level": 63,
+      "xpGained": 186,
+      "materials": [
+        { "itemId": 1745, "name": "Green dragonhide", "quantity": 3 },
+        { "itemId": 1734, "name": "Thread", "quantity": 15 }
+      ]
+    },
+    {
+      "itemId": 2499,
+      "name": "Blue d'hide body",
+      "level": 71,
+      "xpGained": 210,
+      "materials": [
+        { "itemId": 2505, "name": "Blue dragonhide", "quantity": 3 },
+        { "itemId": 1734, "name": "Thread", "quantity": 15 }
+      ]
+    },
+    {
+      "itemId": 2501,
+      "name": "Red d'hide body",
+      "level": 77,
+      "xpGained": 234,
+      "materials": [
+        { "itemId": 2507, "name": "Red dragonhide", "quantity": 3 },
+        { "itemId": 1734, "name": "Thread", "quantity": 15 }
+      ]
+    },
+    {
+      "itemId": 2503,
+      "name": "Black d'hide body",
+      "level": 84,
+      "xpGained": 258,
+      "materials": [
+        { "itemId": 2509, "name": "Black dragonhide", "quantity": 3 },
+        { "itemId": 1734, "name": "Thread", "quantity": 15 }
+      ]
+    },
+    {
+      "itemId": 11069,
+      "name": "Gold bracelet",
+      "level": 7,
+      "xpGained": 25,
+      "materials": [
+        { "itemId": 2357, "name": "Gold bar", "quantity": 1 }
+      ]
+    }
+  ]
+}
