@@ -130,3 +130,46 @@ function calculateItemMetrics(item, prices, skill) {
 export function getAvailableSkills() {
   return AVAILABLE_SKILLS;
 }
+
+/**
+ * Gets dashboard data with top 4 items from each skill
+ * @returns {Promise<Object>} Dashboard data with top items from each skill
+ */
+export async function getDashboardData() {
+  const prices = await getLatestPrices();
+  const dashboardData = {};
+
+  // Fetch and process each skill
+  for (const skill of AVAILABLE_SKILLS) {
+    try {
+      const skillData = await loadSkillData(skill);
+
+      // Calculate metrics for each item
+      const calculatedItems = skillData.items.map(item => {
+        const calculation = calculateItemMetrics(item, prices, skill);
+        return {
+          itemId: item.itemId,
+          name: item.name,
+          level: item.level,
+          xpGained: item.xpGained,
+          pricePerXp: calculation.pricePerXp,
+          sellPrice: calculation.sellPrice,
+          materialCost: calculation.materialCost,
+          netProfit: calculation.netProfit
+        };
+      });
+
+      // Sort by price per XP (descending - best value first) and take top 4
+      calculatedItems.sort((a, b) => b.pricePerXp - a.pricePerXp);
+      dashboardData[skill] = calculatedItems.slice(0, 4);
+    } catch (error) {
+      console.error(`Error loading data for ${skill}:`, error);
+      dashboardData[skill] = [];
+    }
+  }
+
+  return {
+    skills: dashboardData,
+    lastUpdated: new Date().toISOString()
+  };
+}

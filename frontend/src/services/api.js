@@ -58,4 +58,12 @@ export async function getBuyables(skill) {
   return response.data;
 }
 
+/**
+ * Get dashboard data with top items from each skill
+ */
+export async function getDashboard() {
+  const response = await api.get('/dashboard');
+  return response.data;
+}
+
 export default api;
