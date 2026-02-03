@@ -16,9 +16,27 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 // Security middleware
 app.use(helmet());
 
-// CORS configuration
+// CORS configuration - Allow both www and non-www versions of production domain
+const allowedOrigins = [
+  FRONTEND_URL,
+  'https://osrstldr.com',
+  'https://www.osrstldr.com',
+  'http://localhost:5173',
+  'http://localhost:5175'
+];
+
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS blocked origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST'],
   credentials: true
 }));
