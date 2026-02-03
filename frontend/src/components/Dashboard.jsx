@@ -122,7 +122,7 @@ export default function Dashboard({ onSkillClick }) {
                         </span>
                       </div>
                       <span className={`text-sm font-semibold ${gpXpColor} whitespace-nowrap ml-2`}>
-                        {formatGP(item.pricePerXp)}/XP
+                        {formatGP(item.pricePerXp)} GP/XP
                       </span>
                     </div>
                   );
