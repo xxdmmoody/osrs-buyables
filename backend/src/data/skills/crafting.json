@@ -6,6 +6,7 @@
       "name": "Air battlestaff",
       "level": 66,
       "xpGained": 137.5,
+      "xpPerHour": 336875,
       "materials": [
         { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
         { "itemId": 573, "name": "Air orb", "quantity": 1 }
@@ -16,6 +17,7 @@
       "name": "Water battlestaff",
       "level": 54,
       "xpGained": 100,
+      "xpPerHour": 245000,
       "materials": [
         { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
         { "itemId": 571, "name": "Water orb", "quantity": 1 }
@@ -26,6 +28,7 @@
       "name": "Earth battlestaff",
       "level": 58,
       "xpGained": 112.5,
+      "xpPerHour": 275625,
       "materials": [
         { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
         { "itemId": 575, "name": "Earth orb", "quantity": 1 }
@@ -36,6 +39,7 @@
       "name": "Fire battlestaff",
       "level": 62,
       "xpGained": 125,
+      "xpPerHour": 306250,
       "materials": [
         { "itemId": 1391, "name": "Battlestaff", "quantity": 1 },
         { "itemId": 569, "name": "Fire orb", "quantity": 1 }
@@ -46,6 +50,7 @@
       "name": "Green d'hide body",
       "level": 63,
       "xpGained": 186,
+      "xpPerHour": 313410,
       "materials": [
         { "itemId": 1745, "name": "Green dragonhide", "quantity": 3 },
         { "itemId": 1734, "name": "Thread", "quantity": 15 }
@@ -56,6 +61,7 @@
       "name": "Blue d'hide body",
       "level": 71,
       "xpGained": 210,
+      "xpPerHour": 353850,
       "materials": [
         { "itemId": 2505, "name": "Blue dragonhide", "quantity": 3 },
         { "itemId": 1734, "name": "Thread", "quantity": 15 }
@@ -66,6 +72,7 @@
       "name": "Red d'hide body",
       "level": 77,
       "xpGained": 234,
+      "xpPerHour": 394290,
       "materials": [
         { "itemId": 2507, "name": "Red dragonhide", "quantity": 3 },
         { "itemId": 1734, "name": "Thread", "quantity": 15 }
@@ -76,6 +83,7 @@
       "name": "Black d'hide body",
       "level": 84,
       "xpGained": 258,
+      "xpPerHour": 434730,
       "materials": [
         { "itemId": 2509, "name": "Black dragonhide", "quantity": 3 },
         { "itemId": 1734, "name": "Thread", "quantity": 15 }
@@ -86,6 +94,7 @@
       "name": "Gold bracelet",
       "level": 7,
       "xpGained": 25,
+      "xpPerHour": 40000,
       "materials": [
         { "itemId": 2357, "name": "Gold bar", "quantity": 1 }
       ]

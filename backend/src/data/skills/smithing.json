@@ -6,6 +6,7 @@
       "name": "Steel platebody",
       "level": 48,
       "xpGained": 187.5,
+      "xpPerHour": 156000,
       "materials": [
         { "itemId": 2353, "name": "Steel bar", "quantity": 5 }
       ]
@@ -15,6 +16,7 @@
       "name": "Mithril platebody",
       "level": 68,
       "xpGained": 250,
+      "xpPerHour": 208000,
       "materials": [
         { "itemId": 2359, "name": "Mithril bar", "quantity": 5 }
       ]
@@ -24,6 +26,7 @@
       "name": "Adamant platebody",
       "level": 88,
       "xpGained": 312.5,
+      "xpPerHour": 260000,
       "materials": [
         { "itemId": 2361, "name": "Adamant bar", "quantity": 5 }
       ]
@@ -33,6 +36,7 @@
       "name": "Rune platebody",
       "level": 99,
       "xpGained": 375,
+      "xpPerHour": 312500,
       "materials": [
         { "itemId": 2363, "name": "Runite bar", "quantity": 5 }
       ]
@@ -42,6 +46,7 @@
       "name": "Rune platelegs",
       "level": 99,
       "xpGained": 225,
+      "xpPerHour": 187500,
       "materials": [
         { "itemId": 2363, "name": "Runite bar", "quantity": 3 }
       ]
@@ -51,6 +56,7 @@
       "name": "Rune plateskirt",
       "level": 99,
       "xpGained": 225,
+      "xpPerHour": 187500,
       "materials": [
         { "itemId": 2363, "name": "Runite bar", "quantity": 3 }
       ]
@@ -60,6 +66,7 @@
       "name": "Rune kiteshield",
       "level": 99,
       "xpGained": 225,
+      "xpPerHour": 187500,
       "materials": [
         { "itemId": 2363, "name": "Runite bar", "quantity": 3 }
       ]
@@ -69,6 +76,7 @@
       "name": "Steel cannonball",
       "level": 35,
       "xpGained": 25.6,
+      "xpPerHour": 20000,
       "materials": [
         { "itemId": 2353, "name": "Steel bar", "quantity": 1 }
       ],
@@ -79,6 +87,7 @@
       "name": "Gold bar (Goldsmith gauntlets)",
       "level": 40,
       "xpGained": 56.2,
+      "xpPerHour": 380000,
       "materials": [
         { "itemId": 444, "name": "Gold ore", "quantity": 1 }
       ],

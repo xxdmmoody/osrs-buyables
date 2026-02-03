@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getDashboard } from '../services/api';
-import { formatGP } from '../utils/formatters';
+import { formatGP, formatXP } from '../utils/formatters';
 import { getItemImageUrl } from '../utils/osrsImages';
 
 /**
@@ -117,9 +117,16 @@ export default function Dashboard({ onSkillClick }) {
                             e.target.style.display = 'none';
                           }}
                         />
-                        <span className="text-sm text-light-text dark:text-dark-text truncate">
-                          {item.name}
-                        </span>
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-sm text-light-text dark:text-dark-text truncate">
+                            {item.name}
+                          </span>
+                          {item.xpPerHour && (
+                            <span className="text-xs text-light-muted dark:text-dark-muted">
+                              {formatXP(item.xpPerHour)}/hr
+                            </span>
+                          )}
+                        </div>
                       </div>
                       <span className={`text-sm font-semibold ${gpXpColor} whitespace-nowrap ml-2`}>
                         {formatGP(item.pricePerXp)} GP/XP

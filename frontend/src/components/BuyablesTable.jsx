@@ -6,7 +6,7 @@ import {
   flexRender,
 } from '@tanstack/react-table';
 import { ArrowUp, ArrowDown } from 'lucide-react';
-import { formatGP, formatNumber } from '../utils/formatters';
+import { formatGP, formatNumber, formatXP } from '../utils/formatters';
 import { Tooltip } from './Tooltip';
 import { getItemImageUrl } from '../utils/osrsImages';
 
@@ -63,6 +63,19 @@ export function BuyablesTable({ data, skill }) {
               {formatNumber(info.getValue(), 1)}
             </div>
           ),
+        },
+        {
+          accessorKey: 'xpPerHour',
+          header: 'XP/hr',
+          cell: (info) => {
+            const value = info.getValue();
+            if (!value) return <div className="text-light-muted dark:text-dark-muted">-</div>;
+            return (
+              <div className="text-light-text dark:text-dark-text font-medium">
+                {formatXP(value)}
+              </div>
+            );
+          },
         },
       ];
 

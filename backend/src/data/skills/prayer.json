@@ -6,6 +6,7 @@
       "name": "Dragon bones (Gilded altar)",
       "level": 1,
       "xpGained": 252,
+      "xpPerHour": 643000,
       "materials": [
         { "itemId": 536, "name": "Dragon bones", "quantity": 1 }
       ]
@@ -15,6 +16,7 @@
       "name": "Dragon bones (Chaos altar)",
       "level": 1,
       "xpGained": 252,
+      "xpPerHour": 860000,
       "materials": [
         { "itemId": 536, "name": "Dragon bones", "quantity": 0.5 }
       ],
@@ -25,6 +27,7 @@
       "name": "Superior dragon bones (Gilded altar)",
       "level": 70,
       "xpGained": 525,
+      "xpPerHour": 1340000,
       "materials": [
         { "itemId": 22124, "name": "Superior dragon bones", "quantity": 1 }
       ]
@@ -34,6 +37,7 @@
       "name": "Superior dragon bones (Chaos altar)",
       "level": 70,
       "xpGained": 525,
+      "xpPerHour": 1800000,
       "materials": [
         { "itemId": 22124, "name": "Superior dragon bones", "quantity": 0.5 }
       ],
@@ -44,6 +48,7 @@
       "name": "Frost dragon bones (Gilded altar)",
       "level": 1,
       "xpGained": 630,
+      "xpPerHour": 1606500,
       "materials": [
         { "itemId": 31729, "name": "Frost dragon bones", "quantity": 1 }
       ]
@@ -53,6 +58,7 @@
       "name": "Frost dragon bones (Chaos altar)",
       "level": 1,
       "xpGained": 630,
+      "xpPerHour": 2150000,
       "materials": [
         { "itemId": 31729, "name": "Frost dragon bones", "quantity": 0.5 }
       ],
@@ -63,6 +69,7 @@
       "name": "Hydra bones (Gilded altar)",
       "level": 1,
       "xpGained": 385,
+      "xpPerHour": 981750,
       "materials": [
         { "itemId": 22783, "name": "Hydra bones", "quantity": 1 }
       ]
@@ -72,6 +79,7 @@
       "name": "Hydra bones (Chaos altar)",
       "level": 1,
       "xpGained": 385,
+      "xpPerHour": 1315000,
       "materials": [
         { "itemId": 22783, "name": "Hydra bones", "quantity": 0.5 }
       ],
@@ -82,6 +90,7 @@
       "name": "Dagannoth bones (Gilded altar)",
       "level": 1,
       "xpGained": 437.5,
+      "xpPerHour": 1115625,
       "materials": [
         { "itemId": 6729, "name": "Dagannoth bones", "quantity": 1 }
       ]
@@ -91,6 +100,7 @@
       "name": "Dagannoth bones (Chaos altar)",
       "level": 1,
       "xpGained": 437.5,
+      "xpPerHour": 1495000,
       "materials": [
         { "itemId": 6729, "name": "Dagannoth bones", "quantity": 0.5 }
       ],

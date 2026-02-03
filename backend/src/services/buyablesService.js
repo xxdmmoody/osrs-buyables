@@ -152,6 +152,7 @@ export async function getDashboardData() {
           name: item.name,
           level: item.level,
           xpGained: item.xpGained,
+          xpPerHour: item.xpPerHour,
           pricePerXp: calculation.pricePerXp,
           sellPrice: calculation.sellPrice,
           materialCost: calculation.materialCost,

@@ -6,6 +6,7 @@
       "name": "Attack potion(3)",
       "level": 3,
       "xpGained": 25,
+      "xpPerHour": 62500,
       "materials": [
         { "itemId": 91, "name": "Guam potion (unf)", "quantity": 1 },
         { "itemId": 221, "name": "Eye of newt", "quantity": 1 }
@@ -16,6 +17,7 @@
       "name": "Antipoison(3)",
       "level": 5,
       "xpGained": 37.5,
+      "xpPerHour": 93750,
       "materials": [
         { "itemId": 93, "name": "Marrentill potion (unf)", "quantity": 1 },
         { "itemId": 235, "name": "Unicorn horn dust", "quantity": 1 }
@@ -26,6 +28,7 @@
       "name": "Strength potion(3)",
       "level": 12,
       "xpGained": 50,
+      "xpPerHour": 125000,
       "materials": [
         { "itemId": 95, "name": "Tarromin potion (unf)", "quantity": 1 },
         { "itemId": 225, "name": "Limpwurt root", "quantity": 1 }
@@ -36,6 +39,7 @@
       "name": "Restore potion(3)",
       "level": 22,
       "xpGained": 62.5,
+      "xpPerHour": 156250,
       "materials": [
         { "itemId": 97, "name": "Harralander potion (unf)", "quantity": 1 },
         { "itemId": 223, "name": "Red spiders' eggs", "quantity": 1 }
@@ -46,6 +50,7 @@
       "name": "Defence potion(3)",
       "level": 30,
       "xpGained": 75,
+      "xpPerHour": 187500,
       "materials": [
         { "itemId": 99, "name": "Ranarr potion (unf)", "quantity": 1 },
         { "itemId": 239, "name": "White berries", "quantity": 1 }
@@ -56,6 +61,7 @@
       "name": "Prayer potion(3)",
       "level": 38,
       "xpGained": 87.5,
+      "xpPerHour": 218750,
       "materials": [
         { "itemId": 99, "name": "Ranarr potion (unf)", "quantity": 1 },
         { "itemId": 231, "name": "Snape grass", "quantity": 1 }
@@ -66,6 +72,7 @@
       "name": "Super attack(3)",
       "level": 45,
       "xpGained": 100,
+      "xpPerHour": 250000,
       "materials": [
         { "itemId": 101, "name": "Irit potion (unf)", "quantity": 1 },
         { "itemId": 221, "name": "Eye of newt", "quantity": 1 }
@@ -76,6 +83,7 @@
       "name": "Super energy(3)",
       "level": 52,
       "xpGained": 117.5,
+      "xpPerHour": 293750,
       "materials": [
         { "itemId": 103, "name": "Avantoe potion (unf)", "quantity": 1 },
         { "itemId": 2970, "name": "Mort myre fungus", "quantity": 1 }
@@ -86,6 +94,7 @@
       "name": "Super strength(3)",
       "level": 55,
       "xpGained": 125,
+      "xpPerHour": 312500,
       "materials": [
         { "itemId": 105, "name": "Kwuarm potion (unf)", "quantity": 1 },
         { "itemId": 225, "name": "Limpwurt root", "quantity": 1 }
@@ -96,6 +105,7 @@
       "name": "Super restore(3)",
       "level": 63,
       "xpGained": 142.5,
+      "xpPerHour": 356000,
       "materials": [
         { "itemId": 3004, "name": "Snapdragon potion (unf)", "quantity": 1 },
         { "itemId": 223, "name": "Red spiders' eggs", "quantity": 1 }
@@ -106,6 +116,7 @@
       "name": "Super defence(3)",
       "level": 66,
       "xpGained": 150,
+      "xpPerHour": 375000,
       "materials": [
         { "itemId": 107, "name": "Cadantine potion (unf)", "quantity": 1 },
         { "itemId": 239, "name": "White berries", "quantity": 1 }
@@ -116,6 +127,7 @@
       "name": "Ranging potion(3)",
       "level": 72,
       "xpGained": 162.5,
+      "xpPerHour": 406250,
       "materials": [
         { "itemId": 109, "name": "Dwarf weed potion (unf)", "quantity": 1 },
         { "itemId": 245, "name": "Wine of zamorak", "quantity": 1 }
@@ -126,6 +138,7 @@
       "name": "Magic potion(3)",
       "level": 76,
       "xpGained": 172.5,
+      "xpPerHour": 431250,
       "materials": [
         { "itemId": 3002, "name": "Lantadyme potion (unf)", "quantity": 1 },
         { "itemId": 2483, "name": "Potato cactus", "quantity": 1 }
@@ -136,6 +149,7 @@
       "name": "Saradomin brew(3)",
       "level": 81,
       "xpGained": 180,
+      "xpPerHour": 450000,
       "materials": [
         { "itemId": 111, "name": "Toadflax potion (unf)", "quantity": 1 },
         { "itemId": 6693, "name": "Crushed nest", "quantity": 1 }
