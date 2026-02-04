@@ -1,4 +1,13 @@
 /**
+ * Removes trailing zeros and unnecessary decimal point from a number string
+ * @param {string} numStr - Number string with decimals
+ * @returns {string} Cleaned number string
+ */
+function cleanDecimal(numStr) {
+  return numStr.replace(/\.0+$/, '').replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '');
+}
+
+/**
  * Formats a number as GP (gold pieces) with K/M/B suffix
  * @param {number} amount - Amount to format
  * @returns {string} Formatted string
@@ -10,13 +19,13 @@ export function formatGP(amount) {
   const sign = amount < 0 ? '-' : '';
 
   if (abs >= 1_000_000_000) {
-    return `${sign}${(abs / 1_000_000_000).toFixed(2)}B`;
+    return `${sign}${cleanDecimal((abs / 1_000_000_000).toFixed(2))}B`;
   }
   if (abs >= 1_000_000) {
-    return `${sign}${(abs / 1_000_000).toFixed(2)}M`;
+    return `${sign}${cleanDecimal((abs / 1_000_000).toFixed(2))}M`;
   }
   if (abs >= 1_000) {
-    return `${sign}${(abs / 1_000).toFixed(1)}K`;
+    return `${sign}${cleanDecimal((abs / 1_000).toFixed(1))}K`;
   }
 
   return `${sign}${abs.toLocaleString()}`;
@@ -30,7 +39,7 @@ export function formatGP(amount) {
  */
 export function formatNumber(num, decimals = 1) {
   if (num === null || num === undefined) return '0';
-  return num.toFixed(decimals);
+  return cleanDecimal(num.toFixed(decimals));
 }
 
 /**
@@ -40,10 +49,10 @@ export function formatNumber(num, decimals = 1) {
  */
 export function formatXP(xp) {
   if (xp >= 1_000_000) {
-    return `${(xp / 1_000_000).toFixed(1)}M`;
+    return `${cleanDecimal((xp / 1_000_000).toFixed(1))}M`;
   }
   if (xp >= 1_000) {
-    return `${(xp / 1_000).toFixed(1)}K`;
+    return `${cleanDecimal((xp / 1_000).toFixed(1))}K`;
   }
   return xp.toLocaleString();
 }

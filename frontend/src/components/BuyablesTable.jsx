@@ -11,7 +11,7 @@ import { Tooltip } from './Tooltip';
 import { getItemImageUrl } from '../utils/osrsImages';
 
 export function BuyablesTable({ data, skill }) {
-  const isPrayerSkill = skill === 'prayer';
+  const isNonSellableSkill = skill === 'prayer' || skill === 'construction';
 
   const columns = useMemo(
     () => {
@@ -80,7 +80,7 @@ export function BuyablesTable({ data, skill }) {
       ];
 
       // Only show Sell Price for non-Prayer skills
-      if (!isPrayerSkill) {
+      if (!isNonSellableSkill) {
         baseColumns.push({
           accessorKey: 'sellPrice',
           header: 'Sell Price',
@@ -134,7 +134,7 @@ export function BuyablesTable({ data, skill }) {
       });
 
       // Only show Net Profit for non-Prayer skills
-      if (!isPrayerSkill) {
+      if (!isNonSellableSkill) {
         baseColumns.push({
           accessorKey: 'netProfit',
           header: 'Net Profit',
@@ -164,7 +164,7 @@ export function BuyablesTable({ data, skill }) {
           const value = info.getValue();
           // For Prayer, negative value = cost (always red)
           // For other skills, positive = profit (green), negative = cost (red)
-          const isProfit = !isPrayerSkill && value > 0;
+          const isProfit = !isNonSellableSkill && value > 0;
           return (
             <div
               className={`font-bold ${
@@ -181,7 +181,7 @@ export function BuyablesTable({ data, skill }) {
 
       return baseColumns;
     },
-    [isPrayerSkill]
+    [isNonSellableSkill]
   );
 
   const table = useReactTable({
