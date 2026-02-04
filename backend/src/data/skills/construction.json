@@ -1,0 +1,55 @@
+{
+  "skill": "construction",
+  "items": [
+    {
+      "itemId": 13566,
+      "name": "Oak larder",
+      "level": 33,
+      "xpGained": 480,
+      "xpPerHour": 480000,
+      "materials": [
+        { "itemId": 8778, "name": "Oak plank", "quantity": 8 }
+      ]
+    },
+    {
+      "itemId": 13327,
+      "name": "Mahogany table",
+      "level": 52,
+      "xpGained": 840,
+      "xpPerHour": 900000,
+      "materials": [
+        { "itemId": 8782, "name": "Mahogany plank", "quantity": 6 }
+      ]
+    },
+    {
+      "itemId": 9844,
+      "name": "Teak cape rack",
+      "level": 63,
+      "xpGained": 360,
+      "xpPerHour": 500000,
+      "materials": [
+        { "itemId": 8780, "name": "Teak plank", "quantity": 4 }
+      ]
+    },
+    {
+      "itemId": 15298,
+      "name": "Teak garden bench",
+      "level": 66,
+      "xpGained": 540,
+      "xpPerHour": 600000,
+      "materials": [
+        { "itemId": 8780, "name": "Teak plank", "quantity": 6 }
+      ]
+    },
+    {
+      "itemId": 13344,
+      "name": "Oak door",
+      "level": 74,
+      "xpGained": 600,
+      "xpPerHour": 550000,
+      "materials": [
+        { "itemId": 8778, "name": "Oak plank", "quantity": 10 }
+      ]
+    }
+  ]
+}

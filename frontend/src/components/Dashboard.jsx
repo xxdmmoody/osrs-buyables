@@ -59,7 +59,7 @@ export default function Dashboard({ onSkillClick }) {
     );
   }
 
-  const skillOrder = ['herblore', 'prayer', 'cooking', 'crafting', 'smithing'];
+  const skillOrder = ['herblore', 'prayer', 'cooking', 'crafting', 'smithing', 'construction'];
 
   return (
     <div className="space-y-6">
