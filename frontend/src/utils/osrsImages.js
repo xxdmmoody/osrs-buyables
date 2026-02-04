@@ -1,10 +1,11 @@
 /**
  * Generates OSRS Wiki image URL for an item
  * @param {string} itemName - The item name
+ * @param {string} skill - The skill name (for special image handling)
  * @param {number} size - Image size (default: 36px for icons)
  * @returns {string} Image URL
  */
-export function getItemImageUrl(itemName, size = 36) {
+export function getItemImageUrl(itemName, skill = null, size = 36) {
   if (!itemName) return '';
 
   // Strip training method suffixes for Prayer and Smithing items
@@ -22,9 +23,13 @@ export function getItemImageUrl(itemName, size = 36) {
     .replace(/\(/g, '%28')
     .replace(/\)/g, '%29');
 
+  // Construction items use _built.png suffix
+  const suffix = skill === 'construction' ? '_built.png' : '.png';
+
   // Use OSRS Wiki's image API
-  // Format: https://oldschool.runescape.wiki/images/thumb/Item_name.png/SIZEpx-Item_name.png
-  return `https://oldschool.runescape.wiki/images/${formattedName}.png`;
+  // Format: https://oldschool.runescape.wiki/images/Item_name.png
+  // Construction: https://oldschool.runescape.wiki/images/Item_name_built.png
+  return `https://oldschool.runescape.wiki/images/${formattedName}${suffix}`;
 }
 
 /**

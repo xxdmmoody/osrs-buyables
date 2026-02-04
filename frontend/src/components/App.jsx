@@ -121,7 +121,7 @@ function SkillDetail() {
               Understanding GP/XP
             </h3>
             <ul className="text-sm text-light-muted dark:text-blue-300 space-y-1">
-              {skill === 'prayer' ? (
+              {skill === 'prayer' || skill === 'construction' ? (
                 <>
                   <li>
                     <strong className="text-red-600 dark:text-red-400">
@@ -130,9 +130,11 @@ function SkillDetail() {
                     shows the cost per experience point
                   </li>
                   <li>Higher values = more expensive training (more cost per XP)</li>
-                  <li>
-                    Chaos altar methods use ~0.5x bones due to 50% save chance
-                  </li>
+                  {skill === 'prayer' && (
+                    <li>
+                      Chaos altar methods use ~0.5x bones due to 50% save chance
+                    </li>
+                  )}
                 </>
               ) : (
                 <>

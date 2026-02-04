@@ -109,7 +109,7 @@ export default function Dashboard({ onSkillClick }) {
                     >
                       <div className="flex items-center gap-2 flex-1 min-w-0">
                         <img
-                          src={getItemImageUrl(item.name)}
+                          src={getItemImageUrl(item.name, skill)}
                           alt={item.name}
                           className="w-8 h-8 object-contain flex-shrink-0"
                           style={{ imageRendering: 'pixelated' }}

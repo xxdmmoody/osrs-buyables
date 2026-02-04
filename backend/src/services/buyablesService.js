@@ -6,7 +6,7 @@ import { getLatestPrices } from './osrsWikiService.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const AVAILABLE_SKILLS = ['herblore', 'prayer', 'cooking', 'crafting', 'smithing'];
+const AVAILABLE_SKILLS = ['herblore', 'prayer', 'cooking', 'crafting', 'smithing', 'construction'];
 
 /**
  * Loads skill data from JSON file

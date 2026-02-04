@@ -27,7 +27,7 @@ export function BuyablesTable({ data, skill }) {
               <div className="flex items-center gap-1">
                 {!imageError ? (
                   <img
-                    src={getItemImageUrl(itemName)}
+                    src={getItemImageUrl(itemName, skill)}
                     alt={itemName}
                     loading="lazy"
                     className="w-6 h-6 object-contain flex-shrink-0"
