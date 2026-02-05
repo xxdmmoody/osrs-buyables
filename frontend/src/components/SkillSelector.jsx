@@ -7,7 +7,8 @@ const SKILL_DISPLAY_NAMES = {
   cooking: 'Cooking',
   crafting: 'Crafting',
   smithing: 'Smithing',
-  construction: 'Construction'
+  construction: 'Construction',
+  fletching: 'Fletching'
 };
 
 export function SkillSelector({ selectedSkill, onSkillChange }) {

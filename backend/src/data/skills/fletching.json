@@ -1,0 +1,130 @@
+{
+  "skill": "fletching",
+  "items": [
+    {
+      "itemId": 806,
+      "name": "Mithril dart",
+      "level": 52,
+      "xpGained": 5.0,
+      "xpPerHour": 250000,
+      "materials": [
+        { "itemId": 809, "name": "Mithril dart tip", "quantity": 1 },
+        { "itemId": 314, "name": "Feather", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 810,
+      "name": "Adamant dart",
+      "level": 67,
+      "xpGained": 6.3,
+      "xpPerHour": 315000,
+      "materials": [
+        { "itemId": 811, "name": "Adamant dart tip", "quantity": 1 },
+        { "itemId": 314, "name": "Feather", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 814,
+      "name": "Rune dart",
+      "level": 81,
+      "xpGained": 8.8,
+      "xpPerHour": 440000,
+      "materials": [
+        { "itemId": 817, "name": "Rune dart tip", "quantity": 1 },
+        { "itemId": 314, "name": "Feather", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 25849,
+      "name": "Amethyst dart",
+      "level": 90,
+      "xpGained": 10.6,
+      "xpPerHour": 530000,
+      "materials": [
+        { "itemId": 25853, "name": "Amethyst dart tip", "quantity": 1 },
+        { "itemId": 314, "name": "Feather", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 13280,
+      "name": "Broad bolts",
+      "level": 55,
+      "xpGained": 3.0,
+      "xpPerHour": 300000,
+      "materials": [
+        { "itemId": 13279, "name": "Broad bolt tip", "quantity": 0.1 }
+      ]
+    },
+    {
+      "itemId": 4160,
+      "name": "Broad arrows",
+      "level": 52,
+      "xpGained": 10.0,
+      "xpPerHour": 300000,
+      "materials": [
+        { "itemId": 4158, "name": "Broad arrowhead", "quantity": 1 },
+        { "itemId": 53, "name": "Headless arrow", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 58,
+      "name": "Willow longbow (u)",
+      "level": 35,
+      "xpGained": 41.5,
+      "xpPerHour": 40000,
+      "materials": [
+        { "itemId": 1519, "name": "Willow logs", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 64,
+      "name": "Maple longbow (u)",
+      "level": 55,
+      "xpGained": 58.3,
+      "xpPerHour": 55000,
+      "materials": [
+        { "itemId": 1517, "name": "Maple logs", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 66,
+      "name": "Yew longbow (u)",
+      "level": 70,
+      "xpGained": 75.0,
+      "xpPerHour": 70000,
+      "materials": [
+        { "itemId": 1515, "name": "Yew logs", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 70,
+      "name": "Magic longbow (u)",
+      "level": 85,
+      "xpGained": 91.5,
+      "xpPerHour": 85000,
+      "materials": [
+        { "itemId": 1513, "name": "Magic logs", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 68,
+      "name": "Magic shortbow (u)",
+      "level": 80,
+      "xpGained": 83.3,
+      "xpPerHour": 83000,
+      "materials": [
+        { "itemId": 1513, "name": "Magic logs", "quantity": 1 }
+      ]
+    },
+    {
+      "itemId": 22253,
+      "name": "Redwood shield",
+      "level": 92,
+      "xpGained": 216.0,
+      "xpPerHour": 60000,
+      "materials": [
+        { "itemId": 19669, "name": "Redwood logs", "quantity": 2 }
+      ]
+    }
+  ]
+}

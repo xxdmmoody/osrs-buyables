@@ -1,4 +1,5 @@
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { Header } from './Header';
 import { SkillSelector } from './SkillSelector';
 import { BuyablesTable } from './BuyablesTable';
@@ -10,6 +11,8 @@ function SkillDetail() {
   const { skill } = useParams();
   const navigate = useNavigate();
   const { data, loading, error, refetch } = useBuyables(skill);
+  const [sortColumn, setSortColumn] = useState('pricePerXp');
+  const [sortDesc, setSortDesc] = useState(true);
 
   const handleBackToDashboard = () => {
     navigate('/');
@@ -17,6 +20,34 @@ function SkillDetail() {
 
   const handleSkillChange = (newSkill) => {
     navigate(`/${newSkill}`);
+  };
+
+  const handleSortChange = (columnId, isDesc) => {
+    setSortColumn(columnId);
+    setSortDesc(isDesc);
+  };
+
+  const getSortLabel = () => {
+    const columnLabels = {
+      name: 'Item Name',
+      level: 'Level',
+      xpGained: 'XP',
+      xpPerHour: 'XP/hr',
+      sellPrice: 'Sell Price',
+      materialCost: 'Material Cost',
+      netProfit: 'Net Profit',
+      pricePerXp: 'GP/XP',
+    };
+
+    const label = columnLabels[sortColumn] || sortColumn;
+    const direction = sortDesc ? 'highest to lowest' : 'lowest to highest';
+
+    // For GP/XP, use more meaningful labels
+    if (sortColumn === 'pricePerXp') {
+      return sortDesc ? 'best GP/XP value' : 'worst GP/XP value';
+    }
+
+    return `${label} (${direction})`;
   };
 
   return (
@@ -104,14 +135,18 @@ function SkillDetail() {
             </h2>
             {data && data.items && (
               <p className="text-sm text-light-muted dark:text-dark-muted mt-1">
-                {data.items.length} items • Sorted by best GP/XP value
+                {data.items.length} items • Sorted by {getSortLabel()}
               </p>
             )}
           </div>
 
           <div className={`transition-all duration-300 ${loading ? 'opacity-40 blur-sm pointer-events-none' : 'opacity-100 blur-0'}`}>
             {data && data.items && (
-              <BuyablesTable data={data.items} skill={data.skill} />
+              <BuyablesTable
+                data={data.items}
+                skill={data.skill}
+                onSortChange={handleSortChange}
+              />
             )}
           </div>
 

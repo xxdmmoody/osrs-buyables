@@ -16,6 +16,18 @@ export function getItemImageUrl(itemName, skill = null, size = 36) {
     .replace(/ \(Chaos altar\)$/i, '')
     .replace(/ \(Goldsmith gauntlets\)$/i, '');
 
+  // Handle special cases where item names differ from image names
+  const specialCases = {
+    'Broad bolts': 'Broad_bolts_5',
+    'Broad arrows': 'Broad_arrows_5'
+  };
+
+  // Check if this item has a special case mapping
+  if (specialCases[cleanedName]) {
+    const suffix = skill === 'construction' ? '_built.png' : '.png';
+    return `https://oldschool.runescape.wiki/images/${specialCases[cleanedName]}${suffix}`;
+  }
+
   // Format item name for OSRS Wiki URL
   // Replace spaces with underscores, encode special characters
   const formattedName = cleanedName

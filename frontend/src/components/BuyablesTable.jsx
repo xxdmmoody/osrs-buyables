@@ -10,7 +10,7 @@ import { formatGP, formatNumber, formatXP } from '../utils/formatters';
 import { Tooltip } from './Tooltip';
 import { getItemImageUrl } from '../utils/osrsImages';
 
-export function BuyablesTable({ data, skill }) {
+export function BuyablesTable({ data, skill, onSortChange }) {
   const isNonSellableSkill = skill === 'prayer' || skill === 'construction';
 
   const columns = useMemo(
@@ -184,18 +184,30 @@ export function BuyablesTable({ data, skill }) {
     [isNonSellableSkill]
   );
 
+  const [sorting, setSorting] = useState([
+    {
+      id: 'pricePerXp',
+      desc: true, // Descending = best value (highest profit) first
+    },
+  ]);
+
   const table = useReactTable({
     data: data || [],
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    initialState: {
-      sorting: [
-        {
-          id: 'pricePerXp',
-          desc: true, // Descending = best value (highest profit) first
-        },
-      ],
+    state: {
+      sorting,
+    },
+    onSortingChange: (updater) => {
+      const newSorting = typeof updater === 'function' ? updater(sorting) : updater;
+      setSorting(newSorting);
+
+      // Notify parent of sort change
+      if (onSortChange && newSorting.length > 0) {
+        const sortColumn = newSorting[0];
+        onSortChange(sortColumn.id, sortColumn.desc);
+      }
     },
   });
 
