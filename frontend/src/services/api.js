@@ -66,4 +66,15 @@ export async function getDashboard() {
   return response.data;
 }
 
+/**
+ * Send a contact form submission
+ * @param {FormData} formData - Multipart form data with name, email, subject, body, and optional screenshots
+ */
+export async function sendContactForm(formData) {
+  const response = await api.post('/contact', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+  return response.data;
+}
+
 export default api;

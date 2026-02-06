@@ -68,7 +68,7 @@ export default function Dashboard({ onSkillClick }) {
           OSRS Buyables Dashboard
         </h2>
         <p className="text-light-muted dark:text-dark-muted">
-          Top 4 most profitable training methods for each skill
+          Top profitable training methods for each skill
         </p>
       </div>
 

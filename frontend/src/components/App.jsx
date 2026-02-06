@@ -4,6 +4,8 @@ import { Header } from './Header';
 import { SkillSelector } from './SkillSelector';
 import { BuyablesTable } from './BuyablesTable';
 import Dashboard from './Dashboard';
+import About from './About';
+import Contact from './Contact';
 import { useBuyables } from '../hooks/useBuyables';
 import { Loader2, AlertCircle, RefreshCw } from 'lucide-react';
 
@@ -225,6 +227,8 @@ function App() {
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route path="/" element={<Dashboard onSkillClick={handleSkillClick} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/:skill" element={<SkillDetail />} />
         </Routes>
       </main>
